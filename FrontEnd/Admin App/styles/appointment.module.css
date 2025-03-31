@@ -1,0 +1,81 @@
+/* Container to hold Sidebar and Content */
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar Container */
+  .sidebar {
+    width: 25%;
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Sidebar List */
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Sidebar List Items */
+  .sidebar li {
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    background-color: #ffffff; /* Tailwind white */
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Active State */
+  .sidebar li.active {
+    background-color: #3b82f6; /* Tailwind blue-500 */
+    color: #ffffff;
+  }
+  
+  /* Hover State */
+  .sidebar li:hover:not(.active) {
+    background-color: #e5e7eb; /* Tailwind gray-200 */
+  }
+  
+  /* Main Content Section */
+  .content {
+    flex-grow: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background-color: #ffffff;
+  }
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .searchInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .searchButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .searchButton:hover {
+    background-color: #0056b3;
+  }
+  
+  

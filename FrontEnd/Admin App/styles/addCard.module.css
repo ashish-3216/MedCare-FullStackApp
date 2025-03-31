@@ -1,0 +1,56 @@
+Form Container
+.container{
+  margin: 10px;
+}
+.container h1{
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Form Labels */
+.form label {
+  font-weight: 500;
+  color: #374151; /* Tailwind gray-700 */
+}
+
+/* Form Inputs and Textareas */
+.form input, .form textarea, .form select {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db; /* Tailwind gray-300 */
+  width: 100%;
+}
+
+.form textarea {
+  height: 120px;
+}
+
+/* Form Button */
+.book {
+  background-color: #3b82f6; /* Tailwind blue-500 */
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book:hover {
+  background-color: #2563eb; /* Tailwind blue-600 */
+}
+
+.book:disabled {
+  background-color: #9ca3af; /* Tailwind gray-400 */
+  cursor: not-allowed;
+}
+
