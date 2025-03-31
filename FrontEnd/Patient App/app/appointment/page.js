@@ -127,7 +127,7 @@ useEffect(() => {
               />
               <input
                 type="text"
-                placeholder="Search doctors"
+                placeholder="Search doctors,Location,Disease"
                 className={styles.search}
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value.toLowerCase())} // ✅ Update search input
