@@ -9,6 +9,7 @@ export default function AppointmentsPage() {
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading,setLoading] = useState(false);
 
   const onDecline = async (id) => {
     try {
@@ -27,6 +28,8 @@ export default function AppointmentsPage() {
       }
     } catch (err) {
       toast.error("Cannot decline appointment");
+    }finally{
+      setLoading(false);
     }
   };
 
@@ -62,6 +65,8 @@ export default function AppointmentsPage() {
       }
     } catch (err) {
       toast.error("Cannot approve appointment");
+    }finally{
+      setLoading(false);
     }
   };
 
@@ -126,12 +131,13 @@ export default function AppointmentsPage() {
       {/* Main Content */}
       <div className={styles.content}>
         {filteredAppointments.length > 0 && filteredAppointments.map((appointment) => (
-          <AppointmentCard
-            key={appointment.id}
-            appointment={appointment}
-            onApprove={onApprove}
-            onDecline={onDecline}
-          />
+           <AppointmentCard 
+           appointment={appointment}
+           onApprove={onApprove}
+           onDecline={onDecline}
+           loading={loading}
+           setLoading={setLoading}
+         />
         ))}
       </div>
     </div>

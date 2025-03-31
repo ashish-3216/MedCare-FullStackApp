@@ -1,6 +1,6 @@
 import styles from "@/styles/AppointmentCard.module.css";
 
-const AppointmentCard = ({ appointment, onApprove, onDecline }) => (
+const AppointmentCard = ({ appointment, onApprove, onDecline , setLoading , loading }) => (
   <div className={styles.card}>
     <h3>Patient : {appointment.username}</h3>
     <b><p>Doctor: {appointment.doc_name}</p></b>
@@ -16,7 +16,7 @@ const AppointmentCard = ({ appointment, onApprove, onDecline }) => (
   <>
     <button
       className={styles.approveButton}
-      onClick={() =>
+      onClick={() => {
         onApprove(
           appointment.id,
           appointment.appointment_time,
@@ -24,16 +24,28 @@ const AppointmentCard = ({ appointment, onApprove, onDecline }) => (
           appointment.doctor_id,
           appointment.user_email,
           appointment.doc_name,
-        )
-      }
+        );
+        setLoading(true);
+      }}
     >
-      Approve
+      {loading ? (
+        <div className={styles.spinner}></div>
+      ) : (
+        'Approve'
+      )}
     </button>
     <button
       className={styles.declineButton}
-      onClick={() => onDecline(appointment.id)}
+      onClick={() => {
+        onDecline(appointment.id)
+        setLoading(true);
+      }}
     >
-      Decline
+      {loading ? (
+        <div className={styles.spinner}></div>
+      ) : (
+        'Decline'
+      )}
     </button>
   </>
 )}
