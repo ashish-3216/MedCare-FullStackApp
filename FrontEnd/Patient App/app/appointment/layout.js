@@ -7,9 +7,6 @@ const Layout = ({ children }) => {
   const { user, fetchUser } = useLogin();
   const router = useRouter();
 
-  useEffect(() => {
-    fetchUser();
-  }, []);
   if (!user) {
     return(
         <>
